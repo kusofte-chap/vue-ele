@@ -13,9 +13,9 @@ export default {
   }
 };
 </script>
-<style scoped>
+
+<style lang="scss" scoped>
 .home {
-  font-size: 30px;
+  font-size: 24rem;
 }
 </style>
-

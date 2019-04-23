@@ -1,0 +1,27 @@
+/*
+* 定义适配mixin
+*/
+
+@mixin queryWidth($min, $max, $baseWidth: 375) {
+  $mediaMin: $min * 1px;
+  $mediaMax: $max * 1px;
+  @if $min == -1 {
+    @media screen and (max-width: $mediaMax) {
+      html {
+        font-size: (($max + 1) / $baseWidth) * 1px;
+      }
+    }
+  } @else if ($max == -1) {
+    @media screen and (min-width: $mediaMin) {
+      html {
+        font-size: ($min / $baseWidth) * 1px;
+      }
+    }
+  } @else {
+    @media screen and (min-width: $mediaMin) and (max-width: $mediaMax) {
+      html {
+        font-size: ($min/$baseWidth) * 1px;
+      }
+    }
+  }
+}
